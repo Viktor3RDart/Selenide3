@@ -8,7 +8,6 @@ import static io.qameta.allure.SeverityLevel.NORMAL;
 import static test.PobedaTestData.*;
 
 @Epic("Selenide и Allure")
-@Feature("Проверка на сайте победа")
 public class TestPobeda extends PobedaHomePage {
 
     @Step("Подготовка старта драйвера, переход на страницу")
@@ -17,6 +16,7 @@ public class TestPobeda extends PobedaHomePage {
         openPage(HOME_PAGE);
     }
 
+    @Feature("Проверка на сайте победа №1")
     @DisplayName("Тест №1")
     @Description(value = "" +
             "    1. Перейти на сайт pobeda.aero.\n" +
@@ -29,7 +29,7 @@ public class TestPobeda extends PobedaHomePage {
             "«Подготовка к полету», «Полезная информация», «О компании».")
     @Severity(NORMAL)
     @Test
-    public void Test() {
+    public void PobedaTaskTest_1() {
         getTitleLogo().should(Condition.visible);
         checkField(giveTitleText(), TITLE_HOME_PAGE);
         checkVisibility(getTitleLogo());
@@ -40,6 +40,7 @@ public class TestPobeda extends PobedaHomePage {
         checkField(giveText(getAboutCompanyButton()), NAME_ABOUT_COMPANY_BUTTON);
     }
 
+    @Feature("Проверка на сайте победа №2")
     @DisplayName("Тест №2")
     @Description(value = "" +
             "    1. Перейти на сайт pobeda.aero.\n" +
@@ -81,6 +82,7 @@ public class TestPobeda extends PobedaHomePage {
         checkField(giveColorOf(getTicketFieldDateInFrame()), RED_COLOR_FRAME_CODE);
     }
 
+    @Feature("Проверка на сайте победа №3")
     @DisplayName("Тест №3")
     @Description(value = "" +
             "    1. Перейти на сайт pobeda.aero.\n" +
